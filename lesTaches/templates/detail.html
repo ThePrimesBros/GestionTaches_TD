@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Détails de la nouvelle tache
+{% endblock %}
+{% block header %}
+{% if messages %}
+{% for message in messages %}
+<h2>{{message}}</h2>
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-5">Détail de la création de la tache</h1>
+<ul class="text-decoration-none text-center">
+    <li>Nom de la tache : {{pers.name}}</li>
+    <li>Date de création : {{pers.scheduled_date}}</li>
+    <li>Date limite : {{pers.due_date}}</li>
+    <li>Description de la tache : {{pers.description}}</li>
+    <li>Personne qui a créée la tache : {{pers.user}}</li>
+</ul>
+<div class="text-center"><br>
+    <a class="btn btn-success m-3" href="http://localhost:8000/lesTaches/listing">Retour a la liste</a>
+</div>
+{% endblock %}

@@ -2,13 +2,16 @@ from django.db import models
 from datetime import date, timedelta
 from django.utils.html import format_html
 from django.template.defaultfilters import date as django_date
+from django.forms.fields import DateField , ChoiceField ,MultipleChoiceField
+from django.forms.widgets import RadioSelect ,CheckboxSelectMultiple
+from django.forms.widgets import SelectDateWidget
 # Create your models here.
 
 
 class Task(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField()
-    created_date = models.DateField(auto_now_add=True)
+    """created_date = models.DateField(auto_now_add=True)"""
     scheduled_date = models.DateField(null=True)
     due_date = models.DateField(null=True)
     closed = models.BooleanField(default=False)
@@ -35,4 +38,5 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+
 

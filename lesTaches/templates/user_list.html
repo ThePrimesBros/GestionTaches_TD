@@ -8,22 +8,19 @@
 
     {% block styles %}
         {{ block.super }}
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
-          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
-          crossorigin="anonymous">
     {% endblock %}
 
     {% block content %}
-    <h1 class="text-center mb-5">Liste des tâches</h1>
-    <div>
- 
-        <table class="text-center">
+
+
+    <h1 class="text-center mb-5">Liste des tâches de l'utilisateur</h1>
+
+    <table class="text-center">
             <tr>
                 <td class="font-weight-bold">Nom de la tache</td>
                 <td class="font-weight-bold">Date de finalisation de la tache</td>
                 <td class="font-weight-bold">Modification de la tache</td>
                 <td class="font-weight-bold">Suppression de la tache</td>
-                <td class="font-weight-bold">Voir les taches des utilisateurs</td>
             </tr>
         {% for tache in objects %}
             <tr>
@@ -35,18 +32,13 @@
                 <td class="col-3">
                     <a class="btn btn-danger mb-3" href="http://localhost:8000/lesTaches/del/{{tache.id}}">Supprimer</a>
                 </td>
-
-                <td class="col-3">
-                    <a class="btn btn-info mb-3"  href="http://localhost:8000/lesTaches/user/{{tache.user.id}}">{{tache.user}}</a>
-                </td>
-                    
-            </tr>
-
+                </tr>
     {% endfor %}
-</table>
-    <div class="text-center"><br>
-        <a class="btn btn-success m-3" href="http://localhost:8000/lesTaches/">Créé une nouvelle tache</a>
-    </div>
-   
+                </table>
+                <div class="text-center"><br>
+                    <a class="btn btn-success m-3" href="http://localhost:8000/lesTaches/listing">Retour a la liste</a>
+                </div>
+
 
     {% endblock %}
+
