@@ -10,7 +10,7 @@ class NewTaskTest(TestCase):
     def test_add_task(self):
 
         browser = webdriver.Chrome()
-        browser.get('http://localhost:8000/newTask')
+        browser.get('http://localhost:8000/lesTaches')
         time.sleep(1)
 
         name = browser.find_element_by_id("id_name")
